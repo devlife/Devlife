@@ -2,4 +2,4 @@
 
 ## This solution includes but is not limited to:
 1. HtmlHelper.Script()
-	
+	Renders a <script /> element
