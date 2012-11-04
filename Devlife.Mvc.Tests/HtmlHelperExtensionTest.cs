@@ -1,22 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using NUnit.Framework;
 using System.Web.Mvc;
 
 namespace Devlife.Mvc.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class HtmlHelperExtensionTest : TestBase
     {
-        [TestMethod]
+        [Test]
         public void Script_returns_properly_formatted_script_tag()
         {
-            const string expected = "<script type=\"text\\javascript\" src=\"/Scripts/jquery.js\" />";
+            const string expected = "<script src=\"/Scripts/jquery.js\" type=\"text/javascript\"></script>";
 
-            HtmlHelper helper = CreateHtmlHelper();
+            HtmlHelper helper = CreateHtmlHelper(appPath: "/Scripts/jquery.js");
 
             MvcHtmlString result = helper.Script("jquery.js");
 

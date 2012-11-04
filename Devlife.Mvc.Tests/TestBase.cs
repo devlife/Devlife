@@ -1,9 +1,6 @@
 ﻿using Moq;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -13,11 +10,15 @@ namespace Devlife.Mvc.Tests
 {
     public class TestBase
     {
-        public static HtmlHelper CreateHtmlHelper(ViewDataDictionary vd = null)
+        public static HtmlHelper CreateHtmlHelper(ViewDataDictionary vd = null, string appPath = "/")
         {
             vd = vd ?? new ViewDataDictionary();
 
-            var controllerContext = new ControllerContext(new Mock<HttpContextBase>().Object, new RouteData(), new Mock<ControllerBase>().Object);
+            var context = new Mock<HttpContextBase>();
+            context.Setup(c => c.Request.ApplicationPath).Returns(appPath);
+            context.Setup(c => c.Response.ApplyAppPathModifier(It.IsAny<string>())).Returns(appPath);
+
+            var controllerContext = new ControllerContext(context.Object, new RouteData(), new Mock<ControllerBase>().Object);
 
             var mockViewContext = new ViewContext(controllerContext,
                                                   new Mock<IView>().Object,
