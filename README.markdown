@@ -1,1 +1,1 @@
-This repo is meant to hold some of the helper functions that I use on a daily/weekly basis while developing ASP.NET MVC projects.
+#This repo is meant to hold some of the helper functions that I use on a daily/weekly basis while developing ASP.NET MVC projects.
