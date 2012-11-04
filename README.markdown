@@ -5,3 +5,4 @@
 ##### This solution includes but is not limited to:
 1. HtmlHelper.Script() - Renders a &lt;script type="text/javascript" /&gt; element
 2. HtmlHelper.StyleSheet() - Renders a &lt;link rel="stylesheet" type="text/css" /&gt;  element
+3. HtmlHelper.Image() - Renders an &lt;img /&gt; element
