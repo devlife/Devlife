@@ -1,7 +1,6 @@
-﻿using System;
 using System.Web.Mvc;
 
-namespace Devlife.Mvc
+namespace Devlife.Mvc.Extensions
 {
     public static class HtmlHelperExtensions
     {

@@ -1,26 +1,27 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace Devlife.Mvc.Tests
 {
-    [TestClass]
-    public class ObjectExtensionsTest
+    [TestFixture]
+    [Category(TestCategories.ObjectExtensions)]
+    public class ObjectExtensionsTests
     {
-        [TestMethod]
+        [Test]
         public void ToDictionary_returns_non_null_if_object_is_null()
         {
             var result = ObjectExtensions.ToDictionary(null);
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void ToDictionary_returns_propery_keys_and_values_if_object_is_not_null()
         {
             object id = 123;
             object name = "Customer Name";
 
-            var obj = new 
-            { 
+            var obj = new
+            {
                 Id = id,
                 Name = name
             };

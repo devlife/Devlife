@@ -1,10 +1,12 @@
-﻿using NUnit.Framework;
+﻿using Devlife.Mvc.Extensions;
+using NUnit.Framework;
 using System.Web.Mvc;
 
 namespace Devlife.Mvc.Tests
 {
     [TestFixture]
-    public class HtmlHelperExtensionTest : TestBase
+    [Category(TestCategories.HtmlHelperExtensions)]
+    public class HtmlHelperExtensionsTests : TestBase
     {
         [Test]
         public void Script_returns_properly_formatted_script_tag()

@@ -1,11 +1,8 @@
-﻿namespace Devlife.Mvc
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Web.Routing;
+﻿using System.Collections.Generic;
+using System.Web.Routing;
 
+namespace Devlife.Mvc
+{
     public static class ObjectExtensions
     {
         public static IDictionary<string, object> ToDictionary(this object htmlAttributes)
